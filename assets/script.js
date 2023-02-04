@@ -3,9 +3,9 @@ console.log(`JavaScript file is linked`);
 // event listener for our drop-down input to search by country
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
+    options = {}
     var instances = M.FormSelect.init(elems, options);
   });
-
 
 // When a user clicks on a link in the header, the're directed to bottom of page to select from dropdown
 // When a user selects a city (or country?) from the dropdown they're redirected to the next page the 2nd html page 
