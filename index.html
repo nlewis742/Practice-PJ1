@@ -24,13 +24,15 @@
     </div>
   </nav> -->
 
+ 
+
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo right">Birders Anonymous</a>
       <ul id="nav-mobile" class="left hide-on-med-and-down">
-        <li><a href="sass.html">Search a Country</a></li>
-        <li><a href="badges.html">Most Popular Locations</a></li>
-        <li><a href="collapsible.html">App Description</a></li>
+        <li><a href="#search">Search a Country</a></li>
+        <li><a href="#poploc">Most Popular Locations</a></li>
+        <li><a href="#descrip">App Description</a></li>
       </ul>
     </div>
   </nav>
@@ -42,11 +44,11 @@
   <!-- We need to insert an image before this line of code, could add borders and such -->
         <div class="container">
           <div class="row">
-            <div class="col s12">This can be where we talk about our app</div>
+            <div id="descrip" class="col s12">This can be where we talk about our app</div>
             <div class="col s6">Some more info that could keep going on <br> and on
             </div>
             <!--  -->
-            <div class="col s6"><input type="text" size="50" placeholder="Enter city here..."></div>
+            <div id="search" class="col s6"><input type="text" size="50" placeholder="Enter city here..."></div>
             <!-- Fix this button -->
             <button class="float right" type="submit">Submit</button>
           </div>
@@ -56,7 +58,7 @@
           <div class="container">
             <div class="row">
               <div class="col l6 s12">
-                <h5 class="white-text">Most searched countries:</h5>
+                <h5 id="poploc" class="white-text">Most searched countries:</h5>
                 <p class="grey-text text-lighten-4">You can use rows and columns here to organize your footer content.</p>
               </div>
               <div class="col l4 offset-l2 s12">
