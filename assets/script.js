@@ -8,33 +8,35 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 
 // When a user clicks on a link in the header, the're directed to bottom of page to select from dropdown
-$(document).ready(function() {
-    $("a[href='#search']").click(function(e) {
-      e.preventDefault();
-      $("html, body").animate({
-        scrollTop: $("#searchCountry").offset().top
-      }, 500);
-    });
-  });
+// $(document).ready(function() {
+//     $("a[href='#search']").click(function(e) {
+//       e.preventDefault();
+//       $("html, body").animate({
+//         scrollTop: $("#searchCountry").offset().top
+//       }, 500);
+//     });
+//   });
 
-  $(document).ready(function() {
-    $("a[href='#poploc']").click(function(e) {
-      e.preventDefault();
-      $("html, body").animate({
-        scrollTop: $("#poploc").offset().top
-      }, 500);
-    });
-  });
+//   $(document).ready(function() {
+//     $("a[href='#poploc']").click(function(e) {
+//       e.preventDefault();
+//       $("html, body").animate({
+//         scrollTop: $("#poploc").offset().top
+//       }, 500);
+//     });
+//   });
 
-  $(document).ready(function() {
-    $("a[href='#descrip']").click(function(e) {
-      e.preventDefault();
-      $("html, body").animate({
-        scrollTop: $("#descrip").offset().top
-      }, 500);
-    });
-  });
-// When a user selects a city (or country?) from the dropdown they're redirected to the next page the 2nd html page 
+//   $(document).ready(function() {
+//     $("a[href='#descrip']").click(function(e) {
+//       e.preventDefault();
+//       $("html, body").animate({
+//         scrollTop: $("#descrip").offset().top
+//       }, 500);
+//     });
+//   });
+
+
+// // When a user selects a city (or country?) from the dropdown they're redirected to the next page the 2nd html page 
     // Destination is diplayed
     // Local weather is displayed
     // List of local common birds
