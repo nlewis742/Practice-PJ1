@@ -9,23 +9,6 @@
     <title>Birders be Birdin</title>
 </head>
 <body>
-  <!-- See if we can get the test li's to be under the h1 class -->
-  <!-- <nav class="nav-extended">
-    <div class="nav-wrapper">
-      <h1 class="brand-logo center">Birders Anonymous</h1>
-    </div>
-    <div class="nav-content">
-      <ul class="tabs tabs-transparent center">
-        <li class="tab"><a href="#test1">Search A Country</a></li>
-        <li class="tab"><a  href="#test2">Most Popular Locations</a></li>
-        <li class="tab"><a href="#test3">App Description</a></li>
-        <li class="tab"><a href="#test4">Other</a></li>
-      </ul>
-    </div>
-  </nav> -->
-
- 
-
   <nav>
     <div class="nav-wrapper">
       <a href="#" class="brand-logo right">Birders Anonymous</a>
@@ -42,16 +25,15 @@
      </figure>
 
   <!-- We need to insert an image before this line of code, could add borders and such -->
-        <div class="container">
+        <div class="container" id="searchCountry">
           <div class="row">
-            <div id="descrip" class="col s12">This can be where we talk about our app</div>
-            <div class="col s6">Some more info that could keep going on <br> and on
+            <div id="descrip" class="col s6">This can be where we talk about our apSome more info that could keep going on and on and on and on and on adn on and on and on and on and on and on and on
             </div>
             <!--  --> 
-             <div class="input-field col">
+             <div class="input-field row col">
     <select>
-      <option value="" >Choose your option</option>
-      <option value="1" id= "selected">Option 1</option>
+      <option value="" selected>Choose your option</option>
+      <option value="1">Option 1</option>
       <option value="2">Option 2</option>
       <option value="3">Option 3</option>
     </select>
@@ -64,7 +46,7 @@
             <div class="row">
               <div class="col l6 s12">
                 <h5 id="poploc" class="white-text">Food for Thought:</h5>
-                <p class="grey-text text-lighten-4">Mating seasons are different base on species. Birds are more active during their mating season so plan on visiting us then.</p>
+                <p class="grey-text text-lighten-4">Mating seasons are different base on species. Birds are more active during their mating season so plan on visiting then.</p>
               </div>
               <div class="col l4 offset-l2 s12">
                 <h5 class="white-text">Most Searched Countries:</h5>
@@ -84,7 +66,7 @@
             </div>
           </div>
         </footer>
-    
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js"></script>
           <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/script.js"></script>
 </body>
