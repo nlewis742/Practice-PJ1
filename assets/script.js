@@ -34,6 +34,8 @@ document.addEventListener('DOMContentLoaded', function() {
 //       }, 500);
 //     });
 //   });
+
+
 // // When a user selects a city (or country?) from the dropdown they're redirected to the next page the 2nd html page 
     // Destination is diplayed
     // Local weather is displayed
