@@ -7,6 +7,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems, options);
   });
 
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 5000); // Change image every 2 seconds
+}
+
 // When a user clicks on a link in the header, the're directed to bottom of page to select from dropdown
 // $(document).ready(function() {
 //     $("a[href='#search']").click(function(e) {
