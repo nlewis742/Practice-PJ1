@@ -11,46 +11,74 @@
 
 <body>
   <nav>
-    <div class="nav-wrapper">
+    <div class="nav-wrapper #004d40 teal darken-4">
       <a href="#" class="brand-logo right">Birders Anonymous</a>
-      <ul id="nav-mobile" class="left hide-on-med-and-down">
+      <ul id="nav-mobile" class="left hide-on-med-and-down ">
         <li><a href="#search">Search a Country</a></li>
         <li><a href="#poploc">Most Popular Locations</a></li>
         <li><a href="#descrip">App Description</a></li>
       </ul>
     </div>
   </nav>
-
+<!-- 
   <figure  class="hero">
     <img src="https://media.cnn.com/api/v1/images/stellar/prod/190414090035-01-cassowary.jpg?q=w_2930,h_1953,x_0,y_0,c_fill" alt="picture of a bird" class="bannerimage">
-  </figure>
+  </figure> -->
+<!-- Slideshow container -->
+<div class="slideshow-container">
 
-  <!-- We need to insert an image before this line of code, could add borders and such -->
+  <!-- Full-width images with number and caption text -->
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://media.cnn.com/api/v1/images/stellar/prod/190414090035-01-cassowary.jpg?q=w_2930,h_1953,x_0,y_0,c_fill" style="width:100%">
+      </div>
 
-  <div class="container" id="searchCountry">
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://i.natgeofe.com/n/d472dd3c-8d38-4eed-ae62-7472a12a17de/secretary-bird-thumbnail-nationalgeographic_2331336_3x2.jpg" style="width:100%">
+  </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://i0.wp.com/www.conservewildlifenj.org/blog/wp-content/uploads/2016/02/800px-Barn_Owl_-_Abingdon_2013_8731175397.jpg?resize=705%2C470" style="width:100%">
+      </div>
+
+  <div class="mySlides fade">
+    <div class="numbertext"></div>
+    <img src="https://www.perkypet.com/media/Articles/Perky-Pet/Christmas-Bird-Count.jpg" style="width:100%">
+      </div>
+  
+    <div class="mySlides fade">
+      <div class="numbertext"></div>
+      <img src="https://media.audubon.org/styles/article_hero_inline/s3/tufted_titmouse._photo_deborah_bifulco_great_backyard_bird_count.jpg?itok=3_ydkTV-" style="width:100%">
+         </div>
+  </div>
+
+
+  <div id="bottom" class="container #004d40 teal darken-4" id="searchCountry">
     <div class="row">
       <div id="descrip" class="col s6">This can be where we talk about our apSome more info that could keep going on and on and on and on and on adn on and on and on and on and on and on and on
       </div>
             <!--  --> 
-      <div id= "search" class="input-field row col">
-        <select>
-          <option value="" selected>Choose your option</option>
-          <option value="1">Antarctica</option>
-          <option value="2">Australia</option>
-          <option value="3">Belize</option>
-          <option value="4">Brazil</option>
-          <option value="5">Belize</option>
-          <option value="6">Chad</option>
-          <option value="7">Egypt</option>
-          <option value="8">Haiti</option>
-          <option value="9">Qatar</option>
-          <option value="10">Sweden</option>
+      <div id= "selected" class="input-field row col">
+        <select class = "country">
+          <option value="" disabled selected>Choose your option</option>
+          <option value="Antarctica">Antarctica</option>
+          <option value="Australia">Australia</option>
+          <option value="Belize">Belize</option>
+          <option value="Brazil">Brazil</option>
+          <option value="Columbia">Columbia</option>
+          <option value="Chad">Chad</option>
+          <option value="Egypt">Egypt</option>
+          <option value="Haiti">Haiti</option>
+          <option value="Qatar">Qatar</option>
+          <option value="Sweden">Sweden</option>
         </select>
         <label>Select a Country</label>
       </div>
     </div>
 
-    <footer class="page-footer">
+    <footer class="page-footer #00897b teal darken-1">
       <div class="container">
         <div class="row">
           <div class="col l6 s12">

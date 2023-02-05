@@ -7,6 +7,21 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems, options);
   });
 
+  let slideIndex = 0;
+showSlides();
+
+function showSlides() {
+  let i;
+  let slides = document.getElementsByClassName("mySlides");
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";
+  }
+  slideIndex++;
+  if (slideIndex > slides.length) {slideIndex = 1}
+  slides[slideIndex-1].style.display = "block";
+  setTimeout(showSlides, 4000); // Change image every 2 seconds
+}
+
 // When a user clicks on a link in the header, the're directed to bottom of page to select from dropdown
 // $(document).ready(function() {
 //     $("a[href='#search']").click(function(e) {
@@ -72,23 +87,16 @@ document.addEventListener('DOMContentLoaded', function() {
             // Click Event listener on Play Icon
         // When you click a bird (another event listener?), show/hide the above and then display more stats about the bird, wikipedia info about country(?), format data in HTML table or something?
 
-// var selected = document.querySelector("#selected");
-var selected = document.querySelector('#selected');
 
-function getCountry (event) {
-    event.prevent.Default();
-    var birdURL = `https://xeno-canto.org/api/2/recordings?query=cnt:brazil`
-    console.log(selected);
- console.log(event);
-    fetch(birdURL)
-    .then(function (response) {
-        console.log(response);
-        return response.json();
-    })
-    .then(function (data) {
-        console.log(data);
-    })
-}       
+selected.addEventListener('change', (countryInput));
 
-selected.addEventListener('click', getCountry)
+function countryInput(event) {
+  event.preventDefault();
 
+  var countryInputVal = document.querySelector(`.country`).value;
+  console.log(countryInputVal);
+
+  var queryString = `./index2.html?query=cnt:${countryInputVal}`;
+
+  location.assign(queryString);
+}
