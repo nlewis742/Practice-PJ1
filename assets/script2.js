@@ -93,9 +93,12 @@ function getParams() {
         
         console.log(birdData);
 
-        for (var i = 0; i < birdData.recordings.length; i++) {
+        for (var i = 0; i < birdData.recordings.length; i ) {
             // printResults(birdData.recordings[i]);
-            console.log(birdData.recordings);
+            console.log(birdData.recordings[i].en);
+            console.log(birdData.recordings[i].file);
+            console.log(birdData.recordings[i].cnt);
+            
         }
 
         })
