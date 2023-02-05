@@ -71,25 +71,17 @@ document.addEventListener('DOMContentLoaded', function() {
         // ${Country} // ${Bird Name} // Play Icon (Font Awesome?), starts playing MP3 audio file of bird call, when clicked
             // Click Event listener on Play Icon
         // When you click a bird (another event listener?), show/hide the above and then display more stats about the bird, wikipedia info about country(?), format data in HTML table or something?
-        
-var selected = document.querySelector(`.country`);
-// let countryInput = document.querySelectorAll(`option`);
 
-function getCountry (event) {
-  // var userSelectCountry = countryInput.value;
-  // console.log(userSelectCountry);
-  var countryURL = 'https://xeno-canto.org/api/2/recordings?query=cnt:brazil';
-fetch(countryURL, {
-  cache: 'reload',
-})
-  .then(function (response) {
-    return response.json();
-  })
-  .then(function (birdData) {
-    console.log(birdData);
-  });
+
+selected.addEventListener('change', (countryInput));
+
+function countryInput(event) {
+  event.preventDefault();
+
+  var countryInputVal = document.querySelector(`.country`).value;
+  console.log(countryInputVal);
+
+  var queryString = `./index2.html?query=cnt:${countryInputVal}`;
+
+  location.assign(queryString);
 }
-
-selected.addEventListener('change', (getCountry)); {
-
-  }
