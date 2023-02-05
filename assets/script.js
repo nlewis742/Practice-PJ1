@@ -3,10 +3,14 @@ console.log(`JavaScript file is linked`);
 // event listener for our drop-down input to search by country
 document.addEventListener('DOMContentLoaded', function() {
     var elems = document.querySelectorAll('select');
+    console.log(elems);
     options = {}
     var instances = M.FormSelect.init(elems, options);
   });
 
+
+
+  //slide show
   let slideIndex = 0;
 showSlides();
 
@@ -19,7 +23,7 @@ function showSlides() {
   slideIndex++;
   if (slideIndex > slides.length) {slideIndex = 1}
   slides[slideIndex-1].style.display = "block";
-  setTimeout(showSlides, 4000); // Change image every 2 seconds
+  setTimeout(showSlides, 4000)
 }
 
 // When a user clicks on a link in the header, the're directed to bottom of page to select from dropdown
