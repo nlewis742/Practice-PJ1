@@ -65,7 +65,7 @@ function printResults(resultObj) {
 
 function getParams() {
     // Get the search params out of the URL and the Query itself
-    var countryParam = document.location.search.split('?').pop();
+    var countryParam = document.location.search.split(':').pop();
     console.log(countryParam);
   
     searchApi(countryParam);
@@ -73,14 +73,32 @@ function getParams() {
 
   function searchApi(countryParam) {
 
-    
-  
-    var cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?';
+    var cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:';
     if (countryParam) {
     
-        cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?' + countryParam + "&page=1";
+        cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:' + countryParam + "&page=1";
+        resultTextEl.textContent = countryParam;
     }
     console.log(cntQueryUrl);
+
+    fetch(cntQueryUrl)
+        .then(function(response) {
+            if (!response.ok) {
+                throw response.json();
+            }
+
+            return response.json();
+        })
+        .then(function (birdData) {
+        
+        console.log(birdData);
+
+        for (var i = 0; i < birdData.recordings.length; i++) {
+            // printResults(birdData.recordings[i]);
+            console.log(birdData.recordings);
+        }
+
+        })
     // fetch(cntQueryUrl)
     //   .then(function (response) {
     //     if (!response.ok) {
