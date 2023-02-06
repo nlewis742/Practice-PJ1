@@ -128,3 +128,20 @@ function getParams() {
     }
 
     getParams();
+
+    
+    function weather() {
+      var weatherCountry = document.getElementById('weather');
+      var weatherApiKey = "d02feca2db0e95acf19c297c2c394117";
+    // var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherCountry}&appid=${weatherApiKey}&units=imperial`
+    var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=Qatar&appid=${weatherApiKey}&units=imperial`
+
+     fetch(requestWeatherURL)
+    .then(function (response) {
+     console.log(response);
+      return response.json(); 
+      })
+    }
+
+
+weather()
