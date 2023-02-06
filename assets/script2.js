@@ -1,84 +1,26 @@
-console.log(`Here!`);
 var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#result-content')
-
-
-function printResults(resultObj) {
-  console.log(resultObj);
-
-  // set up `<div>` to hold result content
-  var resultCard = document.createElement('div');
-  resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
-
-  var resultBody = document.createElement('div');
-  resultBody.classList.add('card-body');
-  resultCard.append(resultBody);
-
-  var titleEl = document.createElement('h3');
-  titleEl.textContent = resultObj.title;
-
-  var bodyContentEl = document.createElement('p');
-  bodyContentEl.innerHTML =
-    '<strong>Date:</strong> ' + resultObj.date + '<br/>';
-
-  if (resultObj.subject) {
-    bodyContentEl.innerHTML +=
-      '<strong>Subjects:</strong> ' + resultObj.subject.join(', ') + '<br/>';
-  } else {
-    bodyContentEl.innerHTML +=
-      '<strong>Subjects:</strong> No subject for this entry.';
-  }
-
-  if (resultObj.description) {
-    bodyContentEl.innerHTML +=
-      '<strong>Description:</strong> ' + resultObj.description[0];
-  } else {
-    bodyContentEl.innerHTML +=
-      '<strong>Description:</strong>  No description for this entry.';
-  }
-
-  var linkButtonEl = document.createElement('a');
-  linkButtonEl.textContent = 'Read More';
-  linkButtonEl.setAttribute('href', resultObj.url);
-  linkButtonEl.classList.add('btn', 'btn-dark');
-
-  resultBody.append(titleEl, bodyContentEl, linkButtonEl);
-
-  resultContentEl.append(resultCard);
-}
-// Fetches Bird API
-// var selected = document.querySelector(`.country`);
-
-// function getCountry (event) {
-//   var countryURL = 'https://xeno-canto.org/api/2/recordings?query=cnt:brazil';
-// fetch(countryURL, {
-//   cache: 'reload',
-// })
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (birdData) {
-//     console.log(birdData);
-//     console.log(`here next`);
-//   });
-// }
 
 function getParams() {
     // Get the search params out of the URL and the Query itself
     var countryParam = document.location.search.split(':').pop();
+    // Returns the country the user selected on homepage
     console.log(countryParam);
-  
+    // Passes the country value into the searchApi function
     searchApi(countryParam);
-  }
+}
+
 
   function searchApi(countryParam) {
-
+    // Takes the country the user selected and adds it into the URL to query the right country via the API, then fetches and returns the response
     var cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:';
     if (countryParam) {
-    
+        // Limiting our query to country and only page 1
         cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:' + countryParam + "&page=1";
+        // Write the country that the user selected to the 2nd HTML page
         resultTextEl.textContent = countryParam;
     }
+    // Logging for testing
     console.log(cntQueryUrl);
 
     fetch(cntQueryUrl)
@@ -90,7 +32,7 @@ function getParams() {
             return response.json();
         })
         .then(function (birdData) {
-        
+        // Logging for testing again
         console.log(birdData);
 
         for (var i = 0; i < birdData.recordings.length; i++) {
@@ -104,54 +46,21 @@ function getParams() {
 
 function printResults(recordingsObj) {
 
-    var birdInfoEl = document.createElement('a');
-    birdInfoEl.textContent = recordingsObj.en;
+    // Created and appended a DIV to the DIV we have in HTML 2nd page
+    var birdInfoEl = document.createElement('div');
     resultContentEl.append(birdInfoEl);
 
+    // Created an <a> element to house the bird names, can style like a button with hover and make it link to more info
+    var birdName = document.createElement('a');
+    birdName.classList.add('bird-button');
+    birdName.textContent = recordingsObj.en;
+
+    // var birdCall = document.createElement('a');
+    // birdCall.textContent = 'Bird Call';
+    // birdCall.setAttribute('href', recordingsObj.fileName);
+
+
+    resultContentEl.append(birdName);
 }
-    // fetch(cntQueryUrl)
-    //   .then(function (response) {
-    //     if (!response.ok) {
-    //       throw response.json();
-    //     }
-  
-    //     return response.json();
-    //   })
-    //   .then(function (cntBird) {
-    //     console.log(cntBird);
-    //     resultTextEl.textContent = cntBird.search.query;
 
-    //     if (!cntBird.results.length) {
-    //       console.log('No results found!');
-    //       resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
-    //     } else {
-    //       resultContentEl.textContent = '';
-    //       for (var i = 0; i < cntBird.results.length; i++) {
-    //         printResults(cntBird.results[i]);
-    //       }
-    //     }
-    //   })
-    //   .catch(function (error) {
-    //     console.error(error);
-    //   });
-      
-      // searchApi()
-        // write query to page so user knows what they are viewing
-//         resultTextEl.textContent = cntBird.countryParam;
-  
-//         console.log(locRes);
-  
-//         if (!locRes.results.length) {
-//           console.log('No results found!');
-//           resultContentEl.innerHTML = '<h3>No results found, search again!</h3>';
-//         } else {
-//           resultContentEl.textContent = '';
-//           for (var i = 0; i < locRes.results.length; i++) {
-//             printResults(locRes.results[i]);
-//           }
-//         }
-//       })
-
-//       });
-
-    getParams();
+getParams();
