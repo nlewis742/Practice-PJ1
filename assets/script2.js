@@ -93,15 +93,22 @@ function getParams() {
         
         console.log(birdData);
 
-        for (var i = 0; i < birdData.recordings.length; i ) {
-            // printResults(birdData.recordings[i]);
-            console.log(birdData.recordings[i].en);
-            console.log(birdData.recordings[i].file);
-            console.log(birdData.recordings[i].cnt);
-            
+        for (var i = 0; i < birdData.recordings.length; i++) {
+            printResults(birdData.recordings[i]);
+            // console.log(birdData.recordings[i].en);
+            // console.log(birdData.recordings[i].file);
+            // console.log(birdData.recordings[i].cnt);
         }
+})
+}
 
-        })
+function printResults(recordingsObj) {
+
+    var birdInfoEl = document.createElement('a');
+    birdInfoEl.textContent = recordingsObj.en;
+    resultContentEl.append(birdInfoEl);
+
+}
     // fetch(cntQueryUrl)
     //   .then(function (response) {
     //     if (!response.ok) {
@@ -146,6 +153,5 @@ function getParams() {
 //       })
 
 //       });
-    }
 
     getParams();
