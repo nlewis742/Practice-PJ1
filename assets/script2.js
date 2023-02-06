@@ -15,31 +15,17 @@ function printResults(resultObj) {
   resultCard.append(resultBody);
 
   var titleEl = document.createElement('h3');
-  titleEl.textContent = resultObj.title;
+  titleEl.textContent = resultObj.en;
 
   var bodyContentEl = document.createElement('p');
   bodyContentEl.innerHTML =
     '<strong>Date:</strong> ' + resultObj.date + '<br/>';
 
-  if (resultObj.subject) {
-    bodyContentEl.innerHTML +=
-      '<strong>Subjects:</strong> ' + resultObj.subject.join(', ') + '<br/>';
-  } else {
-    bodyContentEl.innerHTML +=
-      '<strong>Subjects:</strong> No subject for this entry.';
-  }
 
-  if (resultObj.description) {
-    bodyContentEl.innerHTML +=
-      '<strong>Description:</strong> ' + resultObj.description[0];
-  } else {
-    bodyContentEl.innerHTML +=
-      '<strong>Description:</strong>  No description for this entry.';
-  }
 
   var linkButtonEl = document.createElement('a');
-  linkButtonEl.textContent = 'Read More';
-  linkButtonEl.setAttribute('href', resultObj.url);
+  linkButtonEl.textContent = 'Download Song';
+  linkButtonEl.setAttribute('href', resultObj.file);
   linkButtonEl.classList.add('btn', 'btn-dark');
 
   resultBody.append(titleEl, bodyContentEl, linkButtonEl);
@@ -95,20 +81,20 @@ function getParams() {
 
         for (var i = 0; i < birdData.recordings.length; i++) {
             printResults(birdData.recordings[i]);
-            // console.log(birdData.recordings[i].en);
-            // console.log(birdData.recordings[i].file);
-            // console.log(birdData.recordings[i].cnt);
+            console.log(birdData.recordings[i].en);
+            console.log(birdData.recordings[i].file);
+            console.log(birdData.recordings[i].cnt);
         }
 })
 }
 
-function printResults(recordingsObj) {
+// function printResults(recordingsObj) {
 
-    var birdInfoEl = document.createElement('a');
-    birdInfoEl.textContent = recordingsObj.en;
-    resultContentEl.append(birdInfoEl);
+//     var birdInfoEl = document.createElement('a');
+//     birdInfoEl.textContent = recordingsObj.en;
+//     resultContentEl.append(birdInfoEl);
 
-}
+// }
     // fetch(cntQueryUrl)
     //   .then(function (response) {
     //     if (!response.ok) {
