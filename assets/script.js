@@ -93,14 +93,18 @@ function showSlides() {
 
 
 selected.addEventListener('change', (countryInput));
+// Listening for a change on the drop down input on home page
 
 function countryInput(event) {
   event.preventDefault();
 
+  // Get the value of the input to determine which country to query
   var countryInputVal = document.querySelector(`.country`).value;
   console.log(countryInputVal);
 
-  var queryString = `./index2.html?query=cnt:${countryInputVal}`;
+  // Adds the country the user selected to the URL
+  var queryString = `./bird_list.html?query=cnt:${countryInputVal}`;
 
+  // Goes to our 2nd HTML page based on above URL
   location.assign(queryString);
 }
