@@ -7,8 +7,7 @@ function play (){
 }
 
 
-const audioElement = new Audio("XC700147 - Egyptian Goose - Alopochen aegyptiaca (6).mp3")
-var resultTextEl = document.querySelector('#result-text');
+const audioElement = new Audio("XC700147 - Egyptian Goose - Alopochen aegyptiaca (6).mp3")var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#result-content')
 
 
@@ -33,12 +32,7 @@ function printResults(resultObj) {
 
 
   var linkButtonEl = document.createElement('a');
-  myAudioEl = new Audio (resultObj.url);
   linkButtonEl.textContent = 'Download Song';
-  titleEl.addEventListener("click", (event) => {
-    myAudioEl.play(event.target);
-  })
-  console.log(myAudioEl);
   linkButtonEl.setAttribute('href', resultObj.file);
   linkButtonEl.classList.add('btn', 'btn-dark');
 
