@@ -46,7 +46,7 @@ function printResults(resultObj) {
   console.log(url);
 //   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${data.file-name}`;
 //   new Audio (url)
-  linkButtonEl.textContent = 'Download Song';
+  linkButtonEl.textContent = 'Play Clip';
   linkButtonEl.setAttribute('href', url);
   linkButtonEl.classList.add('btn', 'btn-dark');
 
