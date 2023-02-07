@@ -7,7 +7,7 @@ function printResults(resultObj) {
 
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
-  resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+  resultCard.classList.add('card');
 
   var resultBody = document.createElement('div');
   resultBody.classList.add('card-body');
@@ -69,9 +69,9 @@ function getParams() {
 
         for (var i = 0; i < birdData.recordings.length; i++) {
             printResults(birdData.recordings[i]);
-            console.log(birdData.recordings[i].en);
-            console.log(birdData.recordings[i].file);
-            console.log(birdData.recordings[i].cnt);
+            // console.log(birdData.recordings[i].en);
+            // console.log(birdData.recordings[i].file);
+            // console.log(birdData.recordings[i].cnt);
         }
 })
 }
