@@ -1,5 +1,36 @@
 var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#result-content')
+const audioElement = new Audio("XC700147 - Egyptian Goose - Alopochen aegyptiaca (6).mp3")
+
+function printResults(resultObj) {
+  console.log(resultObj);
+
+  // set up `<div>` to hold result content
+  var resultCard = document.createElement('div');
+  resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+
+  var resultBody = document.createElement('div');
+  resultBody.classList.add('card-body');
+  resultCard.append(resultBody);
+
+  var titleEl = document.createElement('h3');
+  titleEl.textContent = resultObj.en;
+
+  var bodyContentEl = document.createElement('p');
+  bodyContentEl.innerHTML =
+    '<strong>Date:</strong> ' + resultObj.date + '<br/>';
+
+
+
+  var linkButtonEl = document.createElement('a');
+  linkButtonEl.textContent = 'Download Song';
+  linkButtonEl.setAttribute('href', resultObj.file);
+  linkButtonEl.classList.add('btn', 'btn-dark');
+
+  resultBody.append(titleEl, bodyContentEl, linkButtonEl);
+
+  resultContentEl.append(resultCard);
+}
 
 function getParams() {
     // Get the search params out of the URL and the Query itself
@@ -44,7 +75,7 @@ function getParams() {
 })
 }
 
-// function printResults(recordingsObj) {
+function printResults(recordingsObj) {
 
     // Created and appended a DIV to the DIV we have in HTML 2nd page
     var birdInfoEl = document.createElement('div');
@@ -54,7 +85,6 @@ function getParams() {
     var birdName = document.createElement('a');
     birdName.classList.add('bird-button');
     birdName.textContent = recordingsObj.en;
-    // test
 
     // var birdCall = document.createElement('a');
     // birdCall.textContent = 'Bird Call';
