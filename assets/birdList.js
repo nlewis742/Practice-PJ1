@@ -1,6 +1,13 @@
 var resultTextEl = document.querySelector('#result-text');
 var resultContentEl = document.querySelector('#result-content')
 const audioElement = new Audio("XC700147 - Egyptian Goose - Alopochen aegyptiaca (6).mp3")
+var countryName = document.getElementById('country-name');
+var temp = document.getElementById('temp');
+var condition = document.getElementById('condition');
+var wind = document.getElementById('wind');
+var humidity = document.getElementById('humidity');
+var icon = document.getElementById('icon');
+
 
 function printResults(resultObj) {
   console.log(resultObj);
@@ -100,24 +107,29 @@ getParams();
     
 function weather(countryParam) {
     var countryParam = document.location.search.split(':').pop();
-    var weatherCountry = document.querySelector('#weather').value;
+    // var weatherCountry = document.querySelector('#weather').value;
     var weatherApiKey = "d02feca2db0e95acf19c297c2c394117";
-    // var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=Qatar&appid=${weatherApiKey}&units=imperial`
-    // 
     if (countryParam) {
         // Limiting our query to country and only page 1
-    var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${countryParam}&appid=${weatherApiKey}&units=imperial`
-    // cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:' + countryParam + "&page=1";
-    // Write the country that the user selected to the 2nd HTML page
-    // weatherCountry.textContent = countryParam;
-
+    var requestWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${countryParam}&appid=${weatherApiKey}&units=imperial`
 }
-
     fetch(requestWeatherURL)
     .then(function (response) {
     console.log(response);
     return response.json(); 
     })
-}
+    .then(function (data) {
+    console.log(data);
 
+    var iconCode = data.weather[0].icon;
+    var image = document.createElement("img");
+    image.setAttribute("src", "https://openweathermap.org/img/wn/" + iconCode + ".png");
+    icon.append(image)
+    countryName.textContent = `${data.name}`;
+    temp.textContent = `Temperature: ${data.main.temp} °F`;
+    condition.textContent = `Condition: ${data.weather[0].description}`;
+    wind.textContent = `Wind Speed: ${data.wind.speed} MPH`;
+    humidity.textContent = `Humidity: ${data.main.humidity}%`;        
+    })
+}
 weather()
