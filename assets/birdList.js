@@ -7,7 +7,7 @@ function printResults(resultObj) {
 
   // set up `<div>` to hold result content
   var resultCard = document.createElement('div');
-  resultCard.classList.add('card', 'bg-light', 'text-dark', 'mb-3', 'p-3');
+  resultCard.classList.add('card');
 
   var resultBody = document.createElement('div');
   resultBody.classList.add('card-body');
@@ -68,31 +68,31 @@ function getParams() {
 
         for (var i = 0; i < birdData.recordings.length; i++) {
             printResults(birdData.recordings[i]);
-            console.log(birdData.recordings[i].en);
-            console.log(birdData.recordings[i].file);
-            console.log(birdData.recordings[i].cnt);
+            // console.log(birdData.recordings[i].en);
+            // console.log(birdData.recordings[i].file);
+            // console.log(birdData.recordings[i].cnt);
         }
 })
 }
 
-function printResults(recordingsObj) {
+// function printResults(recordingsObj) {
 
-    // Created and appended a DIV to the DIV we have in HTML 2nd page
-    var birdInfoEl = document.createElement('div');
-    resultContentEl.append(birdInfoEl);
+//     // Created and appended a DIV to the DIV we have in HTML 2nd page
+//     var birdInfoEl = document.createElement('div');
+//     resultContentEl.append(birdInfoEl);
 
-    // Created an <a> element to house the bird names, can style like a button with hover and make it link to more info
-    var birdName = document.createElement('a');
-    birdName.classList.add('bird-button');
-    birdName.textContent = recordingsObj.en;
+//     // Created an <a> element to house the bird names, can style like a button with hover and make it link to more info
+//     var birdName = document.createElement('a');
+//     birdName.classList.add('bird-button');
+//     birdName.textContent = recordingsObj.en;
 
-    // var birdCall = document.createElement('a');
-    // birdCall.textContent = 'Bird Call';
-    // birdCall.setAttribute('href', recordingsObj.fileName);
+//     // var birdCall = document.createElement('a');
+//     // birdCall.textContent = 'Bird Call';
+//     // birdCall.setAttribute('href', recordingsObj.fileName);
 
-    resultContentEl.append(birdName);
+//     resultContentEl.append(birdName);
 
-}
+// }
 
 getParams();
 

@@ -1,1 +1,25 @@
 /* Need styling for .bird-button (class) to style the birds on the 2nd HTML page when they are pulled over. Keep getting an error on the CSS for unexpected token "." or "{" and not sure why */
+
+div {
+    margin: 10px;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+}
+
+.card {
+    background-color: lightgrey;
+    border: 3px solid black;
+    padding: 10px;
+}
+
+.card:hover {
+    background-color: white;
+}
+
+.card-body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-flow: column wrap;
+}
