@@ -103,7 +103,7 @@ function countryInput(event) {
   console.log(countryInputVal);
 
   // Adds the country the user selected to the URL
-  var queryString = `./index2.html?query=cnt:${countryInputVal}`;
+  var queryString = `./bird_list.html?query=cnt:${countryInputVal}`;
 
   // Goes to our 2nd HTML page based on above URL
   location.assign(queryString);

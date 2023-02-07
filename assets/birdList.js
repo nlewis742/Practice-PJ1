@@ -37,14 +37,14 @@ function getParams() {
 
         for (var i = 0; i < birdData.recordings.length; i++) {
             printResults(birdData.recordings[i]);
-            // console.log(birdData.recordings[i].en);
-            // console.log(birdData.recordings[i].file);
-            // console.log(birdData.recordings[i].cnt);
+            console.log(birdData.recordings[i].en);
+            console.log(birdData.recordings[i].file);
+            console.log(birdData.recordings[i].cnt);
         }
 })
 }
 
-function printResults(recordingsObj) {
+// function printResults(recordingsObj) {
 
     // Created and appended a DIV to the DIV we have in HTML 2nd page
     var birdInfoEl = document.createElement('div');
@@ -54,12 +54,14 @@ function printResults(recordingsObj) {
     var birdName = document.createElement('a');
     birdName.classList.add('bird-button');
     birdName.textContent = recordingsObj.en;
+    // test
 
     // var birdCall = document.createElement('a');
     // birdCall.textContent = 'Bird Call';
     // birdCall.setAttribute('href', recordingsObj.fileName);
 
     resultContentEl.append(birdName);
+
 }
 
 getParams();
