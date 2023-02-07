@@ -8,6 +8,9 @@ var wind = document.getElementById('wind');
 var humidity = document.getElementById('humidity');
 var icon = document.getElementById('icon');
 
+var url = "xeno-canto.org/sounds/uploaded/LESINAMNUB/XC684991--Delicate_Prinia_Al_Wukair_Farm_Qatar_Y_Abboushi.mp3"
+new Audio (url)
+console.log(url);
 
 function printResults(resultObj) {
   console.log(resultObj);
@@ -30,14 +33,29 @@ function printResults(resultObj) {
 
 
   var linkButtonEl = document.createElement('a');
+  var dataSonoSmall = resultObj.sono.small
+  console.log(dataSonoSmall);
+  var fileName = resultObj["file-name"]
+  console.log(fileName);
+
+
+  var alphaNum = resultObj.sono.small.split("uploaded/")[1].split("/ffts")[0];
+  console.log(alphaNum);
+
+  var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
+  console.log(url);
+//   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${data.file-name}`;
+//   new Audio (url)
   linkButtonEl.textContent = 'Download Song';
-  linkButtonEl.setAttribute('href', resultObj.file);
+  linkButtonEl.setAttribute('href', url);
   linkButtonEl.classList.add('btn', 'btn-dark');
 
+//   new Audio (url)
   resultBody.append(titleEl, bodyContentEl, linkButtonEl);
 
   resultContentEl.append(resultCard);
 }
+
 
 function getParams() {
     // Get the search params out of the URL and the Query itself
