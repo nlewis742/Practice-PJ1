@@ -39,6 +39,7 @@ function getParams() {
     console.log(countryParam);
     // Passes the country value into the searchApi function
     searchApi(countryParam);
+    weather(countryParam);
 }
 
 
@@ -97,14 +98,23 @@ function getParams() {
 getParams();
 
     
-function weather() {
-    var weatherCountry = document.getElementById('weather');
+function weather(countryParam) {
+    var countryParam = document.location.search.split(':').pop();
+    var weatherCountry = document.querySelector('#weather').value;
     var weatherApiKey = "d02feca2db0e95acf19c297c2c394117";
-// var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${weatherCountry}&appid=${weatherApiKey}&units=imperial`
-var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=Qatar&appid=${weatherApiKey}&units=imperial`
+    // var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=Qatar&appid=${weatherApiKey}&units=imperial`
+    // 
+    if (countryParam) {
+        // Limiting our query to country and only page 1
+    var requestWeatherURL = `https://api.openweathermap.org/data/2.5/forecast?q=${countryParam}&appid=${weatherApiKey}&units=imperial`
+    // cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:' + countryParam + "&page=1";
+    // Write the country that the user selected to the 2nd HTML page
+    // weatherCountry.textContent = countryParam;
+
+}
 
     fetch(requestWeatherURL)
-.then(function (response) {
+    .then(function (response) {
     console.log(response);
     return response.json(); 
     })
