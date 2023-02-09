@@ -138,7 +138,10 @@ function weather(countryParam) {
     })
     .then(function (data) {
     console.log(data);
-
+    
+    for (let i = document.images.length; i--> 0;) {
+        document.images[i].parentNode.removeChild(document.images[i]);
+    }
     var iconCode = data.weather[0].icon;
     var image = document.createElement("img");
     image.setAttribute("src", "https://openweathermap.org/img/wn/" + iconCode + ".png");
