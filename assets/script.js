@@ -8,8 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     var instances = M.FormSelect.init(elems, options);
   });
 
-
-
   //slide show
   let slideIndex = 0;
 showSlides();
@@ -91,10 +89,14 @@ function showSlides() {
             // Click Event listener on Play Icon
         // When you click a bird (another event listener?), show/hide the above and then display more stats about the bird, wikipedia info about country(?), format data in HTML table or something?
 
+        
+
+
 
 selected.addEventListener('change', (countryInput));
-// Listening for a change on the drop down input on home page
+var searched = [];
 
+// Listening for a change on the drop down input on home page
 function countryInput(event) {
   event.preventDefault();
 
@@ -107,4 +109,30 @@ function countryInput(event) {
 
   // Goes to our 2nd HTML page based on above URL
   location.assign(queryString);
+    
+    var country = countryInputVal.trim();
+    if (country === "") {
+      return;
+    }
+    searched.push(country)
+    countryInputVal = "";
+    localStorage.setItem("searched", JSON.stringify(searched))
+  }
+  init()
+
+function init() {
+  var savedCountries = JSON.parse(localStorage.getItem("searched"));
+  var searchedList= document.getElementById('searched-list')
+  if (savedCountries !== null) {
+      searched = savedCountries;
+      console.log(searched);
+  }
+  for (let i = 0; i < searched.length; i++) {
+      var country = searched[i];
+      var div = document.createElement("div");
+      div.textContent = country;
+      div.classList.add(country)
+      console.log(country);
+      searchedList.appendChild(div);
+  }
 }
