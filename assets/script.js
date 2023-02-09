@@ -130,6 +130,7 @@ function init() {
   for (let i = 0; i < searched.length; i++) {
       var country = searched[i];
       var div = document.createElement("div");
+      div.style.textIndent = '30px'
       div.textContent = country;
       div.classList.add(country)
       console.log(country);
