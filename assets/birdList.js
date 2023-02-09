@@ -8,9 +8,9 @@ var wind = document.getElementById('wind');
 var humidity = document.getElementById('humidity');
 var icon = document.getElementById('icon');
 
-var url = "xeno-canto.org/sounds/uploaded/LESINAMNUB/XC684991--Delicate_Prinia_Al_Wukair_Farm_Qatar_Y_Abboushi.mp3"
-new Audio (url)
-console.log(url);
+// var url = "xeno-canto.org/sounds/uploaded/LESINAMNUB/XC684991--Delicate_Prinia_Al_Wukair_Farm_Qatar_Y_Abboushi.mp3"
+// new Audio (url)
+// console.log(url);
 
 function printResults(resultObj) {
   console.log(resultObj);
@@ -92,7 +92,7 @@ function getParams() {
         // Logging for testing again
         console.log(birdData);
 
-        for (var i = 0; i < birdData.recordings.length; i++) {
+        for (var i = 0; i <= 40; i++) {
             printResults(birdData.recordings[i]);
             // console.log(birdData.recordings[i].en);
             // console.log(birdData.recordings[i].file);
