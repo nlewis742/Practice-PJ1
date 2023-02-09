@@ -23,3 +23,21 @@ div {
     justify-content: center;
     flex-flow: column wrap;
 }
+
+.header {
+    float: left;
+    width: 50%;
+  }
+
+  .weather-section {
+    float: right;
+    margin-top: 150px;
+    margin-right: 75px;
+    width: 200px;
+    height: 200px;
+    text-align: center;
+  }
+
+  #result-content {
+    margin-top: 500px;
+  }
