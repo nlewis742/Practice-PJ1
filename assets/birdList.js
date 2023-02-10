@@ -8,9 +8,6 @@ var wind = document.getElementById('wind');
 var humidity = document.getElementById('humidity');
 var icon = document.getElementById('icon');
 
-// var url = "xeno-canto.org/sounds/uploaded/LESINAMNUB/XC684991--Delicate_Prinia_Al_Wukair_Farm_Qatar_Y_Abboushi.mp3"
-// new Audio (url)
-// console.log(url);
 
 function printResults(resultObj) {
   console.log(resultObj);
@@ -44,7 +41,6 @@ function printResults(resultObj) {
 
   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
   console.log(url);
-//   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${data.file-name}`;
 //   new Audio (url)
   linkButtonEl.textContent = 'Play Clip';
   linkButtonEl.setAttribute('href', url);
@@ -100,26 +96,6 @@ function getParams() {
         }
 })
 }
-
-// function printResults(recordingsObj) {
-
-//     // Created and appended a DIV to the DIV we have in HTML 2nd page
-//     var birdInfoEl = document.createElement('div');
-//     resultContentEl.append(birdInfoEl);
-
-//     // Created an <a> element to house the bird names, can style like a button with hover and make it link to more info
-//     var birdName = document.createElement('a');
-//     birdName.classList.add('bird-button');
-//     birdName.textContent = recordingsObj.en;
-
-//     // var birdCall = document.createElement('a');
-//     // birdCall.textContent = 'Bird Call';
-//     // birdCall.setAttribute('href', recordingsObj.fileName);
-
-//     resultContentEl.append(birdName);
-
-// }
-
 getParams();
 
     
