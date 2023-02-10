@@ -88,8 +88,7 @@ function showSlides() {
         // ${Country} // ${Bird Name} // Play Icon (Font Awesome?), starts playing MP3 audio file of bird call, when clicked
             // Click Event listener on Play Icon
         // When you click a bird (another event listener?), show/hide the above and then display more stats about the bird, wikipedia info about country(?), format data in HTML table or something?
-
-        
+   
 
 
 
