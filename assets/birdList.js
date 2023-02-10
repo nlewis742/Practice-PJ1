@@ -116,26 +116,6 @@ function getParams() {
         }
 })
 }
-
-// function printResults(recordingsObj) {
-
-//     // Created and appended a DIV to the DIV we have in HTML 2nd page
-//     var birdInfoEl = document.createElement('div');
-//     resultContentEl.append(birdInfoEl);
-
-//     // Created an <a> element to house the bird names, can style like a button with hover and make it link to more info
-//     var birdName = document.createElement('a');
-//     birdName.classList.add('bird-button');
-//     birdName.textContent = recordingsObj.en;
-
-//     // var birdCall = document.createElement('a');
-//     // birdCall.textContent = 'Bird Call';
-//     // birdCall.setAttribute('href', recordingsObj.fileName);
-
-//     resultContentEl.append(birdName);
-
-// }
-
 getParams();
 
     
