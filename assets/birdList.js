@@ -8,7 +8,6 @@ var wind = document.getElementById('wind');
 var humidity = document.getElementById('humidity');
 var icon = document.getElementById('icon');
 
-
 function printResults(resultObj) {
   console.log(resultObj);
 
@@ -39,16 +38,35 @@ function printResults(resultObj) {
   var alphaNum = resultObj.sono.small.split("uploaded/")[1].split("/ffts")[0];
   console.log(alphaNum);
 
+  //   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
+  //   console.log(url);
+  //   var audio = new Audio(url);
+  //   linkButtonEl.textContent = 'Play Clip';
+  //   linkButtonEl.setAttribute('href', '#');
+  //   linkButtonEl.classList.add('btn', 'btn-dark');
+  //   linkButtonEl.addEventListener('click', function(event) {
+  //     event.preventDefault();
+  //     audio.play();
+  // });
+  // resultBody.append(titleEl, bodyContentEl, linkButtonEl);
+  // resultContentEl.append(resultCard);
   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
-  console.log(url);
-//   new Audio (url)
+
+  var audio = new Audio(url);
+  
   linkButtonEl.textContent = 'Play Clip';
-  linkButtonEl.setAttribute('href', url);
   linkButtonEl.classList.add('btn', 'btn-dark');
+  linkButtonEl.addEventListener('click', function() {
+    if (audio.paused) {
+      audio.play();
+      linkButtonEl.textContent = 'Pause Clip';
+    } else {
+      audio.pause();
+      linkButtonEl.textContent = 'Play Clip';
+    }
+  });
 
-//   new Audio (url)
   resultBody.append(titleEl, bodyContentEl, linkButtonEl);
-
   resultContentEl.append(resultCard);
 }
 
@@ -71,7 +89,7 @@ function getParams() {
         // Limiting our query to country and only page 1
         cntQueryUrl = 'https://xeno-canto.org/api/2/recordings?query=cnt:' + countryParam + "&page=1";
         // Write the country that the user selected to the 2nd HTML page
-        resultTextEl.textContent = countryParam;
+        resultTextEl.textContent = decodeURIComponent(countryParam);
     }
     // Logging for testing
     console.log(cntQueryUrl);
