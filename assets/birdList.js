@@ -51,7 +51,6 @@ function printResults(resultObj) {
   // resultBody.append(titleEl, bodyContentEl, linkButtonEl);
   // resultContentEl.append(resultCard);
   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
-
   var audio = new Audio(url);
   
   linkButtonEl.textContent = 'Play Clip';
