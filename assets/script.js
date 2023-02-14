@@ -67,8 +67,14 @@ function init() {
       var div = document.createElement("div");
       div.style.textIndent = '30px'
       div.textContent = country;
+      div.style.cursor = "pointer";
       div.classList.add(country)
       console.log(country);
       searchedList.appendChild(div);
+      div.addEventListener('click', function() {
+        var queryString = `./bird_list.html?query=cnt:${country}`;
+        location.assign(queryString);
+      });
+
   }
 }
