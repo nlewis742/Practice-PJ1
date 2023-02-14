@@ -38,18 +38,6 @@ function printResults(resultObj) {
   var alphaNum = resultObj.sono.small.split("uploaded/")[1].split("/ffts")[0];
   console.log(alphaNum);
 
-  //   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
-  //   console.log(url);
-  //   var audio = new Audio(url);
-  //   linkButtonEl.textContent = 'Play Clip';
-  //   linkButtonEl.setAttribute('href', '#');
-  //   linkButtonEl.classList.add('btn', 'btn-dark');
-  //   linkButtonEl.addEventListener('click', function(event) {
-  //     event.preventDefault();
-  //     audio.play();
-  // });
-  // resultBody.append(titleEl, bodyContentEl, linkButtonEl);
-  // resultContentEl.append(resultCard);
   var url = `https://xeno-canto.org/sounds/uploaded/${alphaNum}/${fileName}`
   var audio = new Audio(url);
   
@@ -107,18 +95,14 @@ function getParams() {
 
         for (var i = 0; i <= 40; i++) {
             printResults(birdData.recordings[i]);
-            // console.log(birdData.recordings[i].en);
-            // console.log(birdData.recordings[i].file);
-            // console.log(birdData.recordings[i].cnt);
         }
 })
 }
 getParams();
 
-    
+//Weather API 
 function weather(countryParam) {
     var countryParam = document.location.search.split(':').pop();
-    // var weatherCountry = document.querySelector('#weather').value;
     var weatherApiKey = "d02feca2db0e95acf19c297c2c394117";
     if (countryParam) {
         // Limiting our query to country and only page 1
