@@ -7,6 +7,9 @@ var condition = document.getElementById('condition');
 var wind = document.getElementById('wind');
 var humidity = document.getElementById('humidity');
 var icon = document.getElementById('icon');
+// var url = "xeno-canto.org/sounds/uploaded/LESINAMNUB/XC684991--Delicate_Prinia_Al_Wukair_Farm_Qatar_Y_Abboushi.mp3"
+// new Audio (url)
+// console.log(url);
 
 function printResults(resultObj) {
   console.log(resultObj);
