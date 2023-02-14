@@ -72,7 +72,7 @@ function init() {
       console.log(country);
       searchedList.appendChild(div);
       div.addEventListener('click', function() {
-        var queryString = `./bird_list.html?query=cnt:${country}`;
+        var queryString = `./bird_list.html?query=cnt:${this.textContent}`;
         location.assign(queryString);
       });
 
